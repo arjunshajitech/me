@@ -1,3 +1,33 @@
+// ── Duration calculator ──────────────────────────────────────────────────
+function calcDuration(startYear, startMonth, endYear, endMonth) {
+  let years = endYear - startYear;
+  let months = endMonth - startMonth;
+  if (months < 0) { years--; months += 12; }
+  const parts = [];
+  if (years > 0)  parts.push(years  + ' yr'  + (years  > 1 ? 's' : ''));
+  if (months > 0) parts.push(months + ' mo'  + (months > 1 ? 's' : ''));
+  return parts.join(' ') || '< 1 mo';
+}
+
+(function fillDurations() {
+  const now = new Date();
+  const y = now.getFullYear();
+  const m = now.getMonth() + 1; // 1-indexed
+
+  // Techgentsia total: Apr 2023 → now
+  document.getElementById('company-total').textContent =
+    calcDuration(2023, 4, y, m);
+
+  // R&D Engineer: Oct 2024 → now
+  document.getElementById('duration-rnd').textContent =
+    calcDuration(2024, 10, y, m);
+
+  // Software Engineer: Apr 2023 → Oct 2024 (fixed range)
+  document.getElementById('duration-swe').textContent =
+    calcDuration(2023, 4, 2024, 10);
+})();
+
+// ── Custom cursor ────────────────────────────────────────────────────────
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -29,6 +59,7 @@ document.querySelectorAll('a,button').forEach(el => {
   });
 });
 
+// ── Scroll fade-in ───────────────────────────────────────────────────────
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: .1 });
