@@ -12,7 +12,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 600px;
+  max-width: 900px;
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -36,6 +36,15 @@ body {
   outline: none;
   user-select: none;
   transition: color 0.2s ease;
+}
+
+.details-summary::after {
+  content: "See more about the small fish";
+  margin-left: 0.5rem; /* Give a small gap between the arrow and the text */
+}
+
+.details-accordion[open] .details-summary::after {
+  content: "See less about the small fish";
 }
 
 .details-summary:hover {
