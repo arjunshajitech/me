@@ -39,12 +39,13 @@ body {
 }
 
 .details-summary::after {
-  content: "See more about the small fish";
-  margin-left: 0.5rem; /* Give a small gap between the arrow and the text */
+  content: "See more about the big fish";
+  margin-left: 0.5rem;
+  /* Give a small gap between the arrow and the text */
 }
 
 .details-accordion[open] .details-summary::after {
-  content: "See less about the small fish";
+  content: "See less about the big fish";
 }
 
 .details-summary:hover {
@@ -227,18 +228,20 @@ body {
   0% {
     transform: rotate(-15deg);
   }
+
   100% {
     transform: rotate(15deg);
   }
 }
 
 @keyframes float-fish {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-2px) rotate(-2deg);
   }
 }
-
-
