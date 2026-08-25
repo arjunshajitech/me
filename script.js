@@ -17,7 +17,7 @@ class Fish {
     this.y = Math.random() * canvas.height;
     
     // Size, speed, and heading directions
-    this.size = 16 + Math.random() * 22; // 16px to 38px
+    this.size = 70 + Math.random() * 30; // 70px to 100px — one big fish
     this.speed = 0.4 + Math.random() * 0.8; // Slow natural drifting speed
     this.angle = Math.random() * Math.PI * 2;
     this.wanderTheta = this.angle;
@@ -88,7 +88,7 @@ class Fish {
 
 // Spawn pool
 const fishArray = [];
-const fishCount = 18;
+const fishCount = 1;
 for (let i = 0; i < fishCount; i++) {
   fishArray.push(new Fish());
 }
