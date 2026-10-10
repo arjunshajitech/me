@@ -19,45 +19,8 @@ body {
   box-sizing: border-box;
 }
 
-.quote {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  color: #ffffff;
-  line-height: 1.3;
-}
-
-.details-accordion {
-  margin-top: 1.5rem;
-}
-
-.details-summary {
-  color: #888888;
-  font-size: 0.95rem;
-  cursor: pointer;
-  outline: none;
-  user-select: none;
-  transition: color 0.2s ease;
-}
-
-.details-summary::after {
-  content: "See more about the big fish";
-  margin-left: 0.5rem;
-  /* Give a small gap between the arrow and the text */
-}
-
-.details-accordion[open] .details-summary::after {
-  content: "See less about the big fish";
-}
-
-.details-summary:hover {
-  color: #ffffff;
-}
-
 .details-content {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #2d2d2d;
+  margin: 0;
 }
 
 .name {
